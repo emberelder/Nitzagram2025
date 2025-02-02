@@ -11,6 +11,7 @@ class Post():
         self.description = description
         self.likes_counter = 0
         self.comments = []
+        self.comments_display_index = 0
 
 
     def display_comments(self):
