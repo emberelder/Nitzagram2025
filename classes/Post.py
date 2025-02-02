@@ -4,13 +4,13 @@ from constants import *
 from helpers import screen
 
 
-class Post:
-    def __init__(self, username, location, description, likes_counter, comments):
+class Post():
+    def __init__(self, username, location, description):
         self.username = username
         self.location = location
         self.description = description
-        self.likes_counter = likes_counter
-        self.comments = comments
+        self.likes_counter = 0
+        self.comments = []
 
 
     def display_comments(self):
@@ -49,7 +49,7 @@ class Post:
 
     def display_likes(self):
         font = pygame.font.SysFont("chalkduster.ttf", 14)
-        likes = font.render(self.likes_counter, True, BLACK)
+        likes = font.render(str(self.likes_counter), True, BLACK)
         screen.blit(likes, [LIKE_TEXT_X_POS, LIKE_TEXT_Y_POS])
 
     def display(self):

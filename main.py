@@ -1,7 +1,7 @@
 import pygame
 from helpers import screen
 from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK
-
+from classes import Post
 
 def main():
     # Set up the game display, clock and headline
@@ -18,7 +18,7 @@ def main():
                                         (WINDOW_WIDTH, WINDOW_HEIGHT))
 
     # TODO: add a post here
-
+    post = Post.Post("emberelder","dungeon","i cast fireball")
     running = True
     while running:
         # Grabs events such as key pressed, mouse pressed and so.
@@ -26,7 +26,7 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-
+        post.display()
         # Display the background, presented Image, likes, comments, tags and location(on the Image)
         screen.fill(BLACK)
         screen.blit(background, (0, 0))

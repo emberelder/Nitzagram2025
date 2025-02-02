@@ -10,5 +10,12 @@ class Image_Post(Post):
     def post_contents(self, IMG_DIR):
         self.IMAGE = pygame.image.load(IMG_DIR)
         self.IMAGE = pygame.transform.scale(self.IMAGE, (POST_WIDTH, POST_WIDTH))
+        screen.blit(self.IMAGE, (POST_X_POS,POST_Y_POS))
     def display(self):
+        self.post_contents()
+        self.display_likes()
+        self.display_description()
+        self.display_location()
+        self.display_username()
+        self.display_comments()
         pass
