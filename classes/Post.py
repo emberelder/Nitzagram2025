@@ -48,6 +48,3 @@ class Post:
             position_index += 1
             if i >= NUM_OF_COMMENTS_TO_DISPLAY - 1:
                 break
-
-
-
