@@ -1,8 +1,8 @@
 import pygame
 
 from constants import *
-from helpers import screen
-
+from helpers import *
+from buttons import *
 
 class Post():
     def __init__(self, username, location, description):
@@ -52,6 +52,9 @@ class Post():
         font = pygame.font.SysFont("chalkduster.ttf", 14)
         likes = font.render(str(self.likes_counter), True, BLACK)
         screen.blit(likes, [LIKE_TEXT_X_POS, LIKE_TEXT_Y_POS])
+    def mouse_pressed(self):
+        if mouse_in_button(like_button, pygame.mouse.get_pos()):
+            self.likes_counter+=1
 
     def display(self):
         self.display_likes()
@@ -59,4 +62,3 @@ class Post():
         self.display_location()
         self.display_username()
         self.display_comments()
-        pass
