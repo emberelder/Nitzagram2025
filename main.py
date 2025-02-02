@@ -26,11 +26,11 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-        post.display()
+
         # Display the background, presented Image, likes, comments, tags and location(on the Image)
         screen.fill(BLACK)
         screen.blit(background, (0, 0))
-
+        post.display()
         # Update display - without input update everything
         pygame.display.update()
 

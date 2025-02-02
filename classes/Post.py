@@ -41,7 +41,7 @@ class Post():
     def display_location(self):
         font = pygame.font.SysFont("chalkduster.ttf", 16)
         loc = font.render(self.location, True, BLACK)
-        screen.blit(loc, [LOCATION_TEXT_X_POS, LIKE_BUTTON_Y_POS])
+        screen.blit(loc, [LOCATION_TEXT_X_POS, LOCATION_TEXT_Y_POS])
 
     def display_description(self):
         font = pygame.font.SysFont("chalkduster.ttf", 14)
