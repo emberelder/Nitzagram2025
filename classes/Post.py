@@ -5,12 +5,12 @@ from helpers import screen
 
 
 class Post:
-    def __init__(self, username, location, description):
+    def __init__(self, username, location, description, likes_counter, comments):
         self.username = username
         self.location = location
         self.description = description
-        self.likes_counter = 0
-        self.comments = []
+        self.likes_counter = likes_counter
+        self.comments = comments
 
 
     def display_comments(self):
