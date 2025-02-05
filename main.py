@@ -4,7 +4,12 @@ from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK
 from classes.Post import *
 from classes.ImgPOST import *
 from classes.TextPOST import *
-
+posts = []
+def switch_post(posts, current_post):
+    temp = posts.index(current_post)+1
+    if temp >= 3:
+        temp -= 3
+    return posts[temp]
 def main():
     # Set up the game display, clock and headline
     pygame.init()
@@ -20,8 +25,12 @@ def main():
                                         (WINDOW_WIDTH, WINDOW_HEIGHT))
 
     # TODO: add a post here
-    post = Image_Post("emberelder","dungeon","i cast fireball",'Images/noa_kirel.jpg')
     running = True
+    post = Image_Post("emberelder","dungeon","i cast fireball",'Images/noa_kirel.jpg')
+    posts.append(post)
+    posts.append(Image_Post("emberelder 2","dungeon 2","i cast fireball",'Images/noa_kirel.jpg'))
+    posts.append(Image_Post("emberelder 3","dungeon 3","i cast fireball",'Images/noa_kirel.jpg'))
+
     while running:
         # Grabs events such as key pressed, mouse pressed and so.
         # Going through all the events that happened in the last clock tick
@@ -29,7 +38,10 @@ def main():
             if event.type == pygame.QUIT:
                 running = False
             elif event.type == pygame.MOUSEBUTTONDOWN:
-                post.mouse_pressed()
+                if mouse_in_button(click_post_button, pygame.mouse.get_pos()):
+                    post = switch_post(posts, post)
+                else:
+                    post.mouse_pressed()
 
         # Display the background, presented Image, likes, comments, tags and location(on the Image)
         screen.fill(BLACK)

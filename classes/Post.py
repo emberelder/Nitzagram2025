@@ -53,7 +53,8 @@ class Post():
         likes = font.render(str(self.likes_counter), True, BLACK)
         screen.blit(likes, [LIKE_TEXT_X_POS, LIKE_TEXT_Y_POS])
     def mouse_pressed(self):
-        if mouse_in_button(like_button, pygame.mouse.get_pos()):
+        mouse_pos = pygame.mouse.get_pos()
+        if mouse_in_button(like_button, mouse_pos):
             self.likes_counter+=1
 
     def display(self):
