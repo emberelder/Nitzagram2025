@@ -28,7 +28,7 @@ def main():
     running = True
     post = Image_Post("emberelder","dungeon","i cast fireball",'Images/noa_kirel.jpg')
     posts.append(post)
-    posts.append(Image_Post("emberelder 2","dungeon 2","i cast fireball",'Images/noa_kirel.jpg'))
+    posts.append(Text_Post("ember_elder", "dungeon", "nigga", "bimba", (255,0,0), (0,0,0)))
     posts.append(Image_Post("emberelder 3","dungeon 3","i cast fireball",'Images/noa_kirel.jpg'))
 
     while running:
