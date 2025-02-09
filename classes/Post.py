@@ -50,7 +50,7 @@ class Post():
 
     def display_likes(self):
         font = pygame.font.SysFont("chalkduster.ttf", 14)
-        likes = font.render(str(self.likes_counter), True, BLACK)
+        likes = font.render("Liked by "+str(self.likes_counter)+" users", True, BLACK)
         screen.blit(likes, [LIKE_TEXT_X_POS, LIKE_TEXT_Y_POS])
     def mouse_pressed(self):
         mouse_pos = pygame.mouse.get_pos()
