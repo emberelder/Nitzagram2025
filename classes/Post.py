@@ -19,8 +19,7 @@ class Post:
         if mouse_in_button(like_button, mouse_pos):
             self.likes_counter+=1
         if mouse_in_button(comment_button, mouse_pos):
-            #self.display_comments()
-            pass
+            self.comments.append(Comment(read_comment_from_user()))
     def display_comments(self):
         position_index = self.comments_display_index
         # If there are more than 4 comments, print "view more comments"
