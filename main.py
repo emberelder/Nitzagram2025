@@ -26,10 +26,10 @@ def main():
 
     # TODO: add a post here
     running = True
-    post = Image_Post("emberelder","dungeon","i cast fireball",'Images/noa_kirel.jpg')
+    post = Image_Post("Noa Kirel","Desert","I am on fire",'Images/noa_kirel.jpg')
     posts.append(post)
-    posts.append(Text_Post("ember_elder", "dungeon", "nigga", "bimba", (255,0,0), (0,0,0)))
-    posts.append(Image_Post("emberelder 3","dungeon 3","i cast fireball",'Images/noa_kirel.jpg'))
+    posts.append(Text_Post("nitzan17", "Israel", "This is Text Post on Nitzagram!!", "Text Post is the best kind of post!", (201, 10, 61), (25, 112, 156)))
+    posts.append(Image_Post("nitzan17","Madrid, Spain","Yes i`m on NitzaGram!",'Images/ronaldo.jpg'))
 
     while running:
         # Grabs events such as key pressed, mouse pressed and so.
