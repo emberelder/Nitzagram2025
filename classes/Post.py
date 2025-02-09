@@ -1,10 +1,11 @@
 import pygame
-from Comments import *
+
 from constants import *
 from helpers import *
 from buttons import *
+from classes.Comment import *
 
-class Post():
+class Post:
     def __init__(self, username, location, description):
         self.username = username
         self.location = location
@@ -13,7 +14,13 @@ class Post():
         self.comments = []
         self.comments_display_index = 0
 
-
+    def mouse_pressed(self):
+        mouse_pos = pygame.mouse.get_pos()
+        if mouse_in_button(like_button, mouse_pos):
+            self.likes_counter+=1
+        if mouse_in_button(comment_button, mouse_pos):
+            #self.display_comments()
+            pass
     def display_comments(self):
         position_index = self.comments_display_index
         # If there are more than 4 comments, print "view more comments"
@@ -50,9 +57,8 @@ class Post():
 
     def display_likes(self):
         font = pygame.font.SysFont("chalkduster.ttf", 14)
-        likes = font.render("Liked by "+str(self.likes_counter)+" users", True, BLACK)
+        likes = font.render("Liked by " + str(self.likes_counter) + " users", True, BLACK)
         screen.blit(likes, [LIKE_TEXT_X_POS, LIKE_TEXT_Y_POS])
-    
 
 
     def display(self):
@@ -60,3 +66,4 @@ class Post():
         self.display_description()
         self.display_location()
         self.display_username()
+        self.display_comments()

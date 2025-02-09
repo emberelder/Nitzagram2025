@@ -1,9 +1,12 @@
 import pygame
+
+from buttons import *
 from helpers import screen
 from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK
-from classes.Post import *
+
 from classes.ImgPOST import *
 from classes.TextPOST import *
+
 posts = []
 def switch_post(posts, current_post):
     temp = posts.index(current_post)+1
@@ -47,6 +50,7 @@ def main():
         screen.fill(BLACK)
         screen.blit(background, (0, 0))
         post.display()
+
         # Update display - without input update everything
         pygame.display.update()
 

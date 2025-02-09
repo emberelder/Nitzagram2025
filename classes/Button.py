@@ -26,10 +26,3 @@ class Button:
         self.y_pos = y_pos
         self.width = width
         self.height = height
-
-    def mouse_pressed(self):
-        mouse_pos = pygame.mouse.get_pos()
-        if mouse_in_button(like_button, mouse_pos):
-            self.likes_counter+=1
-        if mouse_in_button(comment_button, mouse_pos):
-            self.display_comments()
