@@ -1,3 +1,9 @@
+from buttons import *
+from constants import *
+import pygame
+from helpers import *
+
+
 class Button:
     """
     A class used to represent a Button on the screen
@@ -15,7 +21,15 @@ class Button:
         :param height: int
             Height of button in pixels
         """
+
         self.x_pos = x_pos
         self.y_pos = y_pos
         self.width = width
         self.height = height
+
+    def mouse_pressed(self):
+        mouse_pos = pygame.mouse.get_pos()
+        if mouse_in_button(like_button, mouse_pos):
+            self.likes_counter+=1
+        if mouse_in_button(comment_button, mouse_pos):
+            self.display_comments()

@@ -1,5 +1,5 @@
 import pygame
-
+from Comments import *
 from constants import *
 from helpers import *
 from buttons import *
@@ -52,14 +52,11 @@ class Post():
         font = pygame.font.SysFont("chalkduster.ttf", 14)
         likes = font.render(str(self.likes_counter), True, BLACK)
         screen.blit(likes, [LIKE_TEXT_X_POS, LIKE_TEXT_Y_POS])
-    def mouse_pressed(self):
-        mouse_pos = pygame.mouse.get_pos()
-        if mouse_in_button(like_button, mouse_pos):
-            self.likes_counter+=1
+    
+
 
     def display(self):
         self.display_likes()
         self.display_description()
         self.display_location()
         self.display_username()
-        self.display_comments()
